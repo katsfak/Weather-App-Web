@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>Weather App</title>
+    </head>
+    <body>
+  <main>
+    <section id="weather-wrapper">
+      <h1>Weather App</h1>
+      <div id="weather-search">
+        <input id="search" type="text" placeholder="Search by city" />
+        <button id="submit" type="button" onclick="fetchWeather()">Search</button>
+      </div>
+      <!-- suggestion shown while typing: city, state (if available) and country -->
+      <div id="location-suggestion" aria-live="polite"></div>
+      <div id="weather-data" style="display: none;"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
