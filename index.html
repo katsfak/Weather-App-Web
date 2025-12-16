@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <title>Weather App</title>
+        <title>Weather App - Real-time Weather Information</title>
     </head>
     <body>
   <main>
     <section id="weather-wrapper">
-      <h1>Weather App</h1>
-      <div id="weather-search">
-        <input id="search" type="text" placeholder="Search by city" />
-        <button id="submit" type="button" onclick="fetchWeather()">Search</button>
+      <h1>🌤️ Weather App</h1>
+      
+      <div id="search-container">
+        <div id="weather-search">
+          <input id="search" type="text" placeholder="Search by city" autocomplete="off" />
+          <button id="submit" type="button" onclick="fetchWeather()">Search</button>
+          <button id="location-btn" type="button" title="Use my location">📍</button>
+        </div>
+        <div id="location-suggestion" aria-live="polite"></div>
       </div>
-      <!-- suggestion shown while typing: city, state (if available) and country -->
-      <div id="location-suggestion" aria-live="polite"></div>
+
+      <div id="settings">
+        <label class="toggle-switch">
+          <input type="checkbox" id="unit-toggle">
+          <span class="slider"></span>
+          <span class="unit-label">°C / °F</span>
+        </label>
+      </div>
+
+      <div id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading weather data...</p>
+      </div>
+
       <div id="weather-data" style="display: none;"></div>
     </section>
   </main>
